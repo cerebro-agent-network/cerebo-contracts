@@ -1,23 +1,37 @@
-# Soroban Project
+# Cerebro Contracts
+
+Soroban smart contracts for education access streaming and scholarship management on Stellar.
+
+## Contracts
+
+### `scholar_contracts`
+
+The main contract managing:
+- **Course Access Streaming**: Time-based access control with heartbeat monitoring for course content
+- **Scholarship Management**: Fund and distribute scholarships to students
+- **Teacher Payments**: Transfer scholarship funds from students to teachers
+- **Access Control**: Expiry-based access with configurable pricing
 
 ## Project Structure
-
-This repository uses the recommended structure for a Soroban project:
 
 ```text
 .
 ├── contracts
-│   └── hello_world
-│       ├── src
-│       │   ├── lib.rs
-│       │   └── test.rs
-│       └── Cargo.toml
+│   └── scholar_contracts
+│       ├── src
+│       │   ├── lib.rs
+│       │   └── test.rs
+│       └── Cargo.toml
 ├── Cargo.toml
 └── README.md
 ```
 
-- New Soroban contracts can be put in `contracts`, each in their own directory. There is already a `hello_world` contract in there to get you started.
-- If you initialized this project with any other example contracts via `--with-example`, those contracts will be in the `contracts` directory as well.
+## Build & Test
+
+```bash
+cargo build
+cargo test
+```
 - Contracts should have their own `Cargo.toml` files that rely on the top-level `Cargo.toml` workspace for their dependencies.
 - Frontend libraries can be added to the top-level directory as well. If you initialized this project with a frontend template via `--frontend-template` you will have those files already included.
 
